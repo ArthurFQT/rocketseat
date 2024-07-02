@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className={styles.Header}>
       <img src={igniteLogo} alt="Logo ignite" />
-      {/* <strong>Ignite Feed</strong> */}
+      <strong>Ignite Feed</strong>
     </header>
   );
 }
