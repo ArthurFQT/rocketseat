@@ -10,33 +10,40 @@ interface TaskProps {
   onToggleComplete: (taskId: number) => void;
 }
 
-export function Task({ id, content, completed, onDeleteTask, onToggleComplete }: TaskProps) {
-
-  // const [isCompleted, setIsCompleted] = useState(false);
-
+export function Task({
+  id,
+  content,
+  completed,
+  onDeleteTask,
+  onToggleComplete,
+}: TaskProps) {
   function handleDeleteTask() {
     onDeleteTask(id);
   }
 
   function handleToggleComplete() {
-    // setIsCompleted(!isCompleted);
-    onToggleComplete(id)
+    onToggleComplete(id);
   }
 
   return (
     <div className={styles.task}>
-      <div className={`${styles.paragraph} ${completed ? styles.completed : ''}`}>
-        
-      <input 
-          type="checkbox" 
-          checked={completed} 
-          onChange={handleToggleComplete} 
-          className={styles.checkbox} 
+      <div
+        className={`${styles.paragraph} ${completed ? styles.completed : ""}`}
+      >
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={handleToggleComplete}
+          className={styles.checkbox}
         />
-        
+
         <p>{content}</p>
       </div>
-      <button className={styles.delete} onClick={handleDeleteTask} title="Deletar tarefa">
+      <button
+        className={styles.delete}
+        onClick={handleDeleteTask}
+        title="Deletar tarefa"
+      >
         <Trash size={24} />
       </button>
     </div>

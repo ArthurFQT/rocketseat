@@ -11,9 +11,7 @@ interface TaskType {
 }
 
 export function List() {
-  const [tasks, setTasks] = useState<TaskType[]>([
-    { id: 1, name: "isso é uma task", completed: false },
-  ]);
+  const [tasks, setTasks] = useState<TaskType[]>([]);
 
   const [newTask, setNewTask] = useState("");
 
